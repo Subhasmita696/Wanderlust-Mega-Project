@@ -137,7 +137,7 @@ sudo apt-get install jenkins -y
   - <b>Create Nodegroup (Master machine)</b>
   ```bash
   eksctl create nodegroup --cluster=wanderlust \
-                       --region=us-east-2 \
+                       --region=ap-south-1 \
                        --name=wanderlust \
                        --node-type=t2.large \
                        --nodes=2 \
