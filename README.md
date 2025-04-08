@@ -107,7 +107,7 @@ sudo apt-get install jenkins -y
 
   - Install **kubectl** (Master machine)(<a href="https://github.com/DevMadhup/DevOps-Tools-Installations/blob/main/Kubectl/Kubectl.sh">Setup kubectl </a>)
   ```bash
-  curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.19.6/2021-01-05/bin/linux/amd64/kubectl
+  curl -o kubectl https://amazon-eks.s3.ap-south-1a.amazonaws.com/1.19.6/2021-01-05/bin/linux/amd64/kubectl
   chmod +x ./kubectl
   sudo mv ./kubectl /usr/local/bin
   kubectl version --short --client
@@ -123,21 +123,21 @@ sudo apt-get install jenkins -y
   - <b>Create EKS Cluster (Master machine)</b>
   ```bash
   eksctl create cluster --name=wanderlust \
-                      --region=ap-south-1 \
+                      --region=ap-south-1a \
                       --version=1.30 \
                       --without-nodegroup
   ```
   - <b>Associate IAM OIDC Provider (Master machine)</b>
   ```bash
   eksctl utils associate-iam-oidc-provider \
-    --region us-east-2 \
+    --region ap-south-1a \
     --cluster wanderlust \
     --approve
   ```
   - <b>Create Nodegroup (Master machine)</b>
   ```bash
   eksctl create nodegroup --cluster=wanderlust \
-                       --region=ap-south-1 \
+                       --region=ap-south-1a \
                        --name=wanderlust \
                        --node-type=t2.large \
                        --nodes=2 \
