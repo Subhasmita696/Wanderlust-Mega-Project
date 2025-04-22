@@ -123,7 +123,7 @@ sudo apt-get install jenkins -y
   - <b>Create EKS Cluster (Master machine)</b>
   ```bash
   eksctl create cluster --name=wanderlust \
-                      --region=ap-south-1a \
+                      --region=us-east-2 \
                       --version=1.30 \
                       --without-nodegroup
   ```
@@ -137,7 +137,7 @@ sudo apt-get install jenkins -y
   - <b>Create Nodegroup (Master machine)</b>
   ```bash
   eksctl create nodegroup --cluster=wanderlust \
-                       --region=ap-south-1a \
+                       --region=us-east-2 \
                        --name=wanderlust \
                        --node-type=t2.large \
                        --nodes=2 \
